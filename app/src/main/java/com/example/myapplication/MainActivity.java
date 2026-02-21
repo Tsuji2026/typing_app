@@ -211,6 +211,7 @@ public class MainActivity extends AppCompatActivity {
 
     // 音量変更：音量UP
     public void click_change_sound_volume_up(View view) {
+        Log.i("MainActivity", "call click_change_sound_volume_up()");
         mSound_now++;
         mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, mSound_now, 0);
         String tmp_str = mSound_change_text_str + String.valueOf(mSound_now);
@@ -218,6 +219,7 @@ public class MainActivity extends AppCompatActivity {
     }
     // 音量変更：音量DOWN
     public void click_change_sound_volume_down(View view) {
+        Log.i("MainActivity", "call click_change_sound_volume_down()");
         mSound_now--;
         mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, mSound_now, 0);
         String tmp_str = mSound_change_text_str + String.valueOf(mSound_now);
