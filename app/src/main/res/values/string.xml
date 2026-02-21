@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="str_home_title_name">タイピング練習</string>
+    <string name="str_start_button_name">開始</string>
+    <string name="str_add_question_button_name">問題DB変更</string>
+    <string name="str_end_button_name">終了</string>
+    <string name="str_sound_on_button_name">音楽 再生</string>
+    <string name="str_sound_off_button_name">音楽 停止</string>
+    <string name="str_explanation_text">文字を入力してください。</string>
+    <string name="str_correct_answer_text"> 問正解</string>
+    <string name="str_go_home_button_name">HOME</string>
+    <string name="str_typing_finish_text">タイピング練習全問終了です。\nお疲れさまでした。</string>
+    <string name="str_add_button_name">追加</string>
+    <string name="str_del_button_name">削除\n</string>
+    <string name="str_dialog_del">DBから削除しました。</string>
+    <string name="str_dialog_add">DBに追加しました。</string>
+    <string name="str_add_explanation_text">追加したい問題を入力してください。</string>
+    <string name="str_del_explanation_text">削除したい問題のidを入力してください。</string>
+    <string name="str_change_answer_add">DBに追加完了。</string>
+    <string name="str_change_answer_del">DBから削除完了。</string>
+
+</resources>
