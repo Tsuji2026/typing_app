@@ -69,16 +69,62 @@
 
     <Button
         android:id="@+id/sound_button"
-        android:layout_width="160dp"
+        android:layout_width="180dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
-        android:layout_marginStart="240dp"
+        android:layout_marginStart="220dp"
         android:layout_marginTop="600dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/str_sound_on_button_name"
         android:textSize="20sp"
         android:backgroundTint="@color/color_sound_on"
         android:onClick="click_change_sound"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/sound_volume_change_name"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="655dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:orientation="horizontal"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/sound_up_button"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="275dp"
+        android:layout_marginTop="660dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/str_sound_up_button_name"
+        android:textSize="20sp"
+        android:backgroundTint="@color/color_sound_on"
+        android:onClick="click_change_sound_volume_up"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/sound_down_button"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="340dp"
+        android:layout_marginTop="660dp"
+        android:backgroundTint="@color/color_sound_on"
+        android:gravity="center_horizontal|center_vertical"
+        android:onClick="click_change_sound_volume_down"
+        android:text="@string/str_sound_down_button_name"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />

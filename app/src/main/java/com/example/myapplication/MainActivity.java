@@ -1,13 +1,16 @@
 package com.example.myapplication;
 
+import android.annotation.SuppressLint;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetManager;
+import android.media.AudioManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -28,7 +31,12 @@ public class MainActivity extends AppCompatActivity {
     private Intent intent_PlaySoundService;
     private DatabaseHelper databaseHelper;
     private Boolean not_stop_sound;
+    private TextView mSound_change;
+    private String mSound_change_text_str;
+    private Integer mSound_now;
+    private AudioManager mAudioManager;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.i("MainActivity", "call onCreate()");
@@ -67,6 +75,14 @@ public class MainActivity extends AppCompatActivity {
         mSound_button.setText(getResources().getText(R.string.str_sound_on_button_name));
         intent_PlaySoundService = new Intent(this, PlaySoundService.class);
         not_stop_sound = false;
+
+        // 音量変更
+        mAudioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
+        mSound_now = mAudioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
+        mSound_change_text_str = "音量：";
+        mSound_change = findViewById(R.id.sound_volume_change_name);
+        String tmp_str = mSound_change_text_str + String.valueOf(mSound_now);
+        mSound_change.setText(tmp_str);
     }
 
     @Override
@@ -111,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
 
     // PlaySoundService起動チェック
     private void check_PlaySoundService() {
-        if(not_stop_sound == false) {
+        if(!not_stop_sound) {
             ActivityManager manager = (ActivityManager) getSystemService((Context.ACTIVITY_SERVICE));
             for (ActivityManager.RunningServiceInfo serviceInfo : manager.getRunningServices((Integer.MAX_VALUE))) {
                 if (PlaySoundService.class.getName().equals(serviceInfo.service.getClassName())) {
@@ -160,6 +176,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    // 問題が記載されているCSVファイルを読み込み
     public int read_csv(List<ListData> list, Context context) {
         int ret_max = 0;
         AssetManager assetManager = context.getAssets();
@@ -190,5 +207,20 @@ public class MainActivity extends AppCompatActivity {
             Log.e("CsvRead", "IOException:" + e.getMessage());
         }
         return ret_max;
+    }
+
+    // 音量変更：音量UP
+    public void click_change_sound_volume_up(View view) {
+        mSound_now++;
+        mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, mSound_now, 0);
+        String tmp_str = mSound_change_text_str + String.valueOf(mSound_now);
+        mSound_change.setText(tmp_str);
+    }
+    // 音量変更：音量DOWN
+    public void click_change_sound_volume_down(View view) {
+        mSound_now--;
+        mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, mSound_now, 0);
+        String tmp_str = mSound_change_text_str + String.valueOf(mSound_now);
+        mSound_change.setText(tmp_str);
     }
 }
