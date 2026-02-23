@@ -220,8 +220,8 @@ public class QuestionChangeActivity extends AppCompatActivity {
         }
     }
 
-    public void click_karaoke_mike(View view) {
-        Log.i("QuestionAddActivity", "call click_karaoke_mike()");
+    public void click_mike(View view) {
+        Log.i("QuestionAddActivity", "call click_mike()");
         String tmp;
 
         // 状態が録音中の場合は、何もしない。

@@ -132,7 +132,7 @@
         android:layout_width="45dp"
         android:layout_height="40dp"
         android:layout_marginTop="560dp"
-        android:onClick="click_karaoke_mike"
+        android:onClick="click_mike"
         android:scaleType="centerCrop"
         android:src="@drawable/karaoke_mike"
         app:layout_constraintEnd_toEndOf="parent"
@@ -154,7 +154,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/add_button2"
+        android:id="@+id/add_button_voice"
         android:layout_width="240dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
