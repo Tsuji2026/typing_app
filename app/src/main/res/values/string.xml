@@ -18,6 +18,9 @@
     <string name="str_dialog_add">DBに追加しました。</string>
     <string name="str_add_explanation_text">追加したい問題を入力してください。</string>
     <string name="str_del_explanation_text">削除したい問題のidを入力してください。</string>
+    <string name="str_add_voice_explanation_text">マイクボタンを押して、追加したい問題文を話してください。</string>
+    <string name="str_mike_status_start_text">録音中...</string>
+    <string name="str_mike_status_stop_text">停止中</string>
     <string name="str_change_answer_add">DBに追加完了。</string>
     <string name="str_change_answer_del">DBから削除完了。</string>
 
