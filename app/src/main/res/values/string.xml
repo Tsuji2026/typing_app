@@ -3,6 +3,7 @@
     <string name="str_home_title_name">タイピング練習</string>
     <string name="str_start_button_name">開始</string>
     <string name="str_add_question_button_name">問題DB変更</string>
+    <string name="str_jni_button_name">JNI機能</string>
     <string name="str_end_button_name">終了</string>
     <string name="str_sound_on_button_name">音楽 再生</string>
     <string name="str_sound_off_button_name">音楽 停止</string>
@@ -23,5 +24,6 @@
     <string name="str_mike_status_stop_text">停止中</string>
     <string name="str_change_answer_add">DBに追加完了。</string>
     <string name="str_change_answer_del">DBから削除完了。</string>
-
+    <string name="str_get_jni_title_text">JNI機能テスト</string>
+    <string name="str_get_jni_button_name">Cファイル実行</string>
 </resources>
