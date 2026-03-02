@@ -25,5 +25,6 @@
     <string name="str_change_answer_add">DBに追加完了。</string>
     <string name="str_change_answer_del">DBから削除完了。</string>
     <string name="str_get_jni_title_text">JNI機能テスト</string>
-    <string name="str_get_jni_button_name">Cファイル実行</string>
+    <string name="str_get_jni_button_name">実行1</string>
+    <string name="str_get_jni_button_name_2">実行2</string>
 </resources>

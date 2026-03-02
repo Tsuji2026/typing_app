@@ -1,10 +1,10 @@
 package com.example.myapplication;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +13,9 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class JniActivity extends AppCompatActivity {
+    private TextView mJni_text;
+    private TextView mJni_text_2;
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +28,9 @@ public class JniActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        mJni_text = findViewById(R.id.get_jni_text_id);
+        mJni_text_2 = findViewById(R.id.get_jni_text_id_2);
     }
 
     @Override
@@ -63,9 +69,29 @@ public class JniActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
-    // タイピング練習開始ボタン押下
+    // ネイティブメソッド定義
+    public native String getMessageFromJNI_no_input();    // タイピング練習開始ボタン押下
+    public native String getMessageFromJNI_input(int num, String str);    // タイピング練習開始ボタン押下
+
+    // ネイティブメソッド読み込み
+    static {
+        System.loadLibrary("mylib");
+    }
+
     public void click_get_jni(View v) {
         Log.i("MainActivity", "call click_get_jni()");
+        // ネイティブメソッド実行
+        String tmp_msg = getMessageFromJNI_no_input();
+        mJni_text.setText(tmp_msg);
     }
+
+    public void click_get_jni_2(View v) {
+        Log.i("MainActivity", "call click_get_jni()");
+        // ネイティブメソッド実行
+        String tmp_msg = getMessageFromJNI_input(123, "test");
+        mJni_text_2.setText(tmp_msg);
+    }
+
+
 }
 

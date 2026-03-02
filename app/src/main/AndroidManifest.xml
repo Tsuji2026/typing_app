@@ -28,12 +28,15 @@
         <activity
             android:name=".TypingFinishActivity"
             android:exported="false" />
-        <activity
-            android:name=".QuestionChangeActivity"
-            android:exported="false" />
+
         <activity
             android:name=".TypingActivity"
             android:exported="false" />
+
+        <activity
+            android:name=".JniActivity"
+            android:exported="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -43,9 +46,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".JniActivity"
-            android:exported="false" />
     </application>
 
 </manifest>
