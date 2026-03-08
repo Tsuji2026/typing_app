@@ -145,6 +145,14 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    // タイピング練習（JNI）開始ボタン押下
+    public void click_start_jni_typing(View v) {
+        Log.i("MainActivity", "call click_start_jni_typing()");
+        not_stop_sound = true;
+        Intent intent = new Intent(this, TypingActivityJni.class);
+        startActivity(intent);
+    }
+
     // 問題追加ボタン押下
     public void click_add_question(View view) {
         Log.i("MainActivity", "call click_add_question()");
@@ -154,7 +162,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // jniボタン押下
-    public void click_typing_jni(View view) {
+    public void click_jni(View view) {
         Log.i("MainActivity", "call click_typing_jni()");
         not_stop_sound = true;
         Intent intent = new Intent(this, JniActivity.class);
